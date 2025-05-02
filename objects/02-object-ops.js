@@ -89,7 +89,7 @@ for (let restaurant of restaurants) {
 // TODO: create objects and put them in an array
 let kansasCityZoo = {
 	name: "Kansas City Zoo",
-	location:"Kansas",
+	location:"Kansas City, MO",
 	adultTicketPrice: 20,
 	childTicketPrice:10,
 	famousFeatures:["Polar Bears", "Elephants", "Zebras"],
@@ -97,7 +97,7 @@ let kansasCityZoo = {
 
 let newYorkZoo = {
 	name: "New York City Zoo",
-	location:"New York",
+	location:"New York City, NY",
 	adultTicketPrice: 40,
 	childTicketPrice: 20,
 	famousFeatures:["Gorillas", "Pigeons", "Rats"],
@@ -136,5 +136,8 @@ for (let i = 0; i < zoos.length; i++){
 
 // TODO: Print a template literal
 for (let zoo of zoos) {
-	console.log(`\n  A favorite with the locals, the ${zoo.name} boasts over a dozen features, including ${zoo.famousFeatures[0]}, ${zoo.famousFeatures[1]}, and ${zoo.famousFeatures[2]}. Admission is $${zoo.adultTicketPrice} for adults, $${zoo.childTicketPrice} for children ages 5-12, and free for children 4 and under.\n`)
+	console.log("*".repeat(zoo.name.length + zoo.location.length + 3));
+	console.log(`${zoo.name} - ${zoo.location}`);
+	console.log("*".repeat(zoo.name.length + zoo.location.length + 3));	
+	console.log(`A favorite with the locals, the ${zoo.name} boasts over a dozen features, including ${zoo.famousFeatures[0]}, ${zoo.famousFeatures[1]}, and ${zoo.famousFeatures[2]}. Admission is $${zoo.adultTicketPrice} for adults, $${zoo.childTicketPrice} for children ages 5-12, and free for children 4 and under.\n`)
 };
