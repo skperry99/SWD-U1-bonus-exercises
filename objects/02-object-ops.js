@@ -87,13 +87,42 @@ for (let restaurant of restaurants) {
 */
 
 // TODO: create objects and put them in an array
+let kansasCityZoo = {
+	name: "Kansas City Zoo",
+	location:"Kansas",
+	adultTicketPrice: 20,
+	childTicketPrice:10,
+	famousFeatures:["Polar Bears", "Elephants", "Zebras"],
+};
 
+let newYorkZoo = {
+	name: "New York City Zoo",
+	location:"New York",
+	adultTicketPrice: 40,
+	childTicketPrice: 20,
+	famousFeatures:["Gorillas", "Pigeons", "Rats"],
+};
+
+let zoos = [newYorkZoo, kansasCityZoo];
+
+console.log(zoos);
 /*
 	Loop through the array, then within that for loop, use a for...in loop to grab values from each key and print them to the console. If you come across a key storing an array, print each element in the array instead of the array itself. Remember that you need a new index variable with each nested FOR loop (i, j are common).
 
 	NOTE: This is a tough one to think through when you're new at this. If you get completely stuck, reference the solution that accompanies this starter code. But make an effort to figure it out yourself first!
 */
-
+for (let i = 0; i < zoos.length; i++){
+	for (let key in zoos[i]){
+		if (Array.isArray(zoos[i][key])){
+			for(let j = 0; j < 3; j++){
+			console.log(zoos[i][key][j])
+		};
+	}
+		else{
+			console.log(zoos[i][key]);
+		};
+	};
+};
 // TODO: use nested loops to print values inside objects
 
 /*
@@ -106,4 +135,6 @@ for (let restaurant of restaurants) {
 */
 
 // TODO: Print a template literal
-
+for (let zoo of zoos) {
+	console.log(`\n  A favorite with the locals, the ${zoo.name} boasts over a dozen features, including ${zoo.famousFeatures[0]}, ${zoo.famousFeatures[1]}, and ${zoo.famousFeatures[2]}. Admission is $${zoo.adultTicketPrice} for adults, $${zoo.childTicketPrice} for children ages 5-12, and free for children 4 and under.\n`)
+};
